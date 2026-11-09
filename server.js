@@ -95,8 +95,10 @@ app.use(
     keys: [process.env.SESSION_SECRET],
     maxAge: 7 * 24 * 60 * 60 * 1000,
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "lax"
+    // Render terminates HTTPS at its proxy; always use secure cookies there.
+    secure: process.env.NODE_ENV === "production" || Boolean(process.env.RENDER_EXTERNAL_URL),
+    sameSite: "lax",
+    path: "/"
   })
 );
 
