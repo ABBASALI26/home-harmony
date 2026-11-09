@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#172b4d">
+
+  <meta name="description" content="Homecare - A clean home, shared responsibility.">
+
+  <title>Homecare | Shared Cleaning Portal</title>
+
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+  <main class="app-container">
+
+    <!-- Login screen -->
+    <section id="login-screen" class="login-screen">
+
+      <div class="login-card">
+
+        <div class="logo">H</div>
+
+        <p class="eyebrow">YOUR SHARED HOME SPACE</p>
+
+        <h1>Homecare</h1>
+
+        <p class="muted">
+          A cleaner home starts with everyone.
+        </p>
+
+        <form id="login-form">
+
+          <label for="password">Shared password</label>
+
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+          >
+
+          <button type="submit" class="primary-button">
+            Enter Homecare
+          </button>
+
+          <p id="login-error" class="error-message"></p>
+
+        </form>
+
+      </div>
+
+    </section>
+
+    <!-- Main dashboard -->
+    <section id="dashboard" class="hidden">
+
+      <header class="topbar">
+
+        <div>
+          <div class="brand-small">HOMECARE</div>
+          <p class="muted">
+            Shared home, shared responsibility.
+          </p>
+        </div>
+
+        <button id="logout-button" class="logout-button">
+          Log out
+        </button>
+
+      </header>
+
+      <!-- Welcome and Hadith -->
+      <section class="welcome-section">
+
+        <p class="eyebrow">HOUSEHOLD DASHBOARD</p>
+
+        <h1>Homecare</h1>
+
+        <p class="welcome-description">
+          Let's maintain a clean, peaceful, and welcoming home together.
+        </p>
+
+        <div class="hadith-card">
+
+          <div class="hadith-icon">✦</div>
+
+          <p class="hadith-title">
+            Cleanliness is half of faith.
+          </p>
+
+          <p class="hadith-arabic" lang="ar" dir="rtl">
+            الطُّهُورُ شَطْرُ الإِيمَانِ
+          </p>
+
+          <p class="hadith-translation">
+            "Purity is half of faith."
+          </p>
+
+          <p class="hadith-reference">
+            Prophet Muhammad ﷺ · Sahih Muslim 223
+          </p>
+
+        </div>
+
+      </section>
+
+      <!-- Statistics -->
+      <section class="stats-grid">
+
+        <article class="stat-card">
+          <span class="stat-icon">🛁</span>
+          <p>Bathroom cleanings</p>
+          <h2 id="bathroom-count">0</h2>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-icon">🗑️</span>
+          <p>Trash removals</p>
+          <h2 id="trash-count">0</h2>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-icon">✨</span>
+          <p>Total activities</p>
+          <h2 id="total-count">0</h2>
+        </article>
+
+      </section>
+
+      <!-- Cleaning activity form -->
+      <section class="content-card">
+
+        <div class="section-heading">
+
+          <div>
+            <p class="eyebrow">ACTIVITY TRACKER</p>
+            <h2>Record a cleaning activity</h2>
+          </div>
+
+        </div>
+
+        <form id="activity-form">
+
+          <div class="form-grid">
+
+            <div>
+              <label for="member">Who completed it?</label>
+
+              <select id="member" required>
+                <option value="">Select a member</option>
+                <option value="ABBAS">ABBAS</option>
+                <option value="YASEEN">YASEEN</option>
+                <option value="ILLAH">ILLAH</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="category">Cleaning category</label>
+
+              <select id="category" required>
+                <option value="bathroom">Bathroom cleaning</option>
+                <option value="trash">Trash & waste</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="date">Date completed</label>
+              <input type="date" id="date" required>
+            </div>
+
+            <div>
+              <label for="time">Time completed</label>
+              <input type="time" id="time" required>
+            </div>
+
+          </div>
+
+          <div class="task-section">
+
+            <label>What did you complete?</label>
+
+            <div id="task-options" class="task-options"></div>
+
+          </div>
+
+          <div>
+            <label for="notes">Additional notes (optional)</label>
+
+            <textarea
+              id="notes"
+              rows="3"
+              maxlength="500"
+              placeholder="Add any additional details..."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="primary-button">
+            Save cleaning activity
+          </button>
+
+          <p id="form-message" class="message"></p>
+
+        </form>
+
+      </section>
+
+      <!-- Cleaning history -->
+      <section class="content-card">
+
+        <div class="section-heading history-heading">
+
+          <div>
+            <p class="eyebrow">HOUSEHOLD HISTORY</p>
+            <h2>Recent activities</h2>
+          </div>
+
+          <select id="history-filter">
+            <option value="all">All activities</option>
+            <option value="bathroom">Bathroom</option>
+            <option value="trash">Trash & waste</option>
+          </select>
+
+        </div>
+
+        <div id="activity-history" class="activity-history">
+
+          <p class="muted">
+            Loading activities...
+          </p>
+
+        </div>
+
+      </section>
+
+      <footer>
+        <p>Homecare · Clean home, shared responsibility.</p>
+        <p class="footer-hadith">
+          Cleanliness is half of faith ﷺ
+        </p>
+      </footer>
+
+    </section>
+
+  </main>
+
+  <script src="/app.js"></script>
+
+</body>
+</html>

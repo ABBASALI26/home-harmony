@@ -1,0 +1,478 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #182337;
+  background: #f3f5f9;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app-container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 35px 0 50px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Login */
+
+.login-screen {
+  min-height: 85vh;
+  display: grid;
+  place-items: center;
+}
+
+.login-card {
+  background: white;
+  padding: 42px;
+  border-radius: 22px;
+  width: min(420px, 100%);
+  box-shadow: 0 15px 50px rgba(20, 35, 60, .08);
+}
+
+.logo {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 17px;
+  background: #172b4d;
+  color: white;
+  font-weight: 800;
+  font-size: 24px;
+  margin-bottom: 25px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Manrope', sans-serif;
+}
+
+.login-card h1 {
+  font-size: 30px;
+  margin: 8px 0;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  color: #75829a;
+  margin-bottom: 8px;
+}
+
+.muted {
+  color: #8490a3;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Inputs */
+
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 18px 0 8px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid #dce2eb;
+  border-radius: 9px;
+  background: white;
+  color: #182337;
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #5476ad;
+  box-shadow: 0 0 0 3px rgba(84, 118, 173, .12);
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Buttons */
+
+.primary-button {
+  width: 100%;
+  padding: 13px 18px;
+  margin-top: 20px;
+  border: 0;
+  border-radius: 9px;
+  color: white;
+  background: #172b4d;
+  font-weight: 700;
+  transition: background .2s ease;
+}
+
+.primary-button:hover {
+  background: #294875;
+}
+
+.primary-button:disabled {
+  opacity: .6;
+  cursor: wait;
+}
+
+.error-message {
+  color: #c43d48;
+  font-size: 13px;
+}
+
+.logout-button {
+  background: white;
+  border: 1px solid #dce2eb;
+  border-radius: 9px;
+  padding: 10px 17px;
+  color: #263851;
+  font-weight: 600;
+}
+
+.logout-button:hover {
+  background: #f5f7fa;
+}
+
+/* Header */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e4e8ef;
+  padding-bottom: 18px;
+}
+
+.brand-small {
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 14px;
+  color: #172b4d;
+}
+
+/* Welcome */
+
+.welcome-section {
+  padding: 42px 0 24px;
+}
+
+.welcome-section h1 {
+  font-size: clamp(30px, 5vw, 42px);
+  margin: 8px 0;
+  letter-spacing: -1.4px;
+}
+
+.welcome-description {
+  color: #8490a3;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+/* Hadith */
+
+.hadith-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #172b4d, #294875);
+  color: white;
+  border-radius: 17px;
+  padding: 27px 30px;
+  margin-top: 22px;
+  box-shadow: 0 9px 25px rgba(23, 43, 77, .12);
+}
+
+.hadith-icon {
+  color: #d8c18b;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.hadith-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(20px, 3vw, 25px);
+  font-weight: 700;
+  margin: 0 0 18px;
+  line-height: 1.4;
+}
+
+.hadith-arabic {
+  color: #f2e4c3;
+  font-family: serif;
+  font-size: 25px;
+  line-height: 1.8;
+  margin: 12px 0;
+}
+
+.hadith-translation {
+  color: #e5eaf2;
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.hadith-reference {
+  color: #c5d0df;
+  font-size: 11px;
+  margin: 14px 0 0;
+  letter-spacing: .3px;
+}
+
+/* Statistics */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 18px 0 25px;
+}
+
+.stat-card,
+.content-card {
+  background: white;
+  border: 1px solid #e8ebf1;
+  border-radius: 15px;
+  padding: 23px;
+  box-shadow: 0 5px 20px rgba(20, 35, 60, .025);
+}
+
+.stat-icon {
+  font-size: 23px;
+}
+
+.stat-card p {
+  color: #8490a3;
+  font-size: 13px;
+  margin: 12px 0 4px;
+}
+
+.stat-card h2 {
+  font-size: 29px;
+  margin: 0;
+}
+
+/* Content cards */
+
+.content-card {
+  margin-top: 18px;
+  padding: 27px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.section-heading h2 {
+  font-size: 21px;
+  margin: 0;
+}
+
+.section-heading .eyebrow {
+  margin: 0 0 6px;
+}
+
+/* Cleaning form */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 20px;
+}
+
+.task-section {
+  margin: 18px 0;
+}
+
+.task-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.task-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #e1e6ee;
+  border-radius: 9px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+}
+
+.task-option:hover {
+  background: #f6f8fb;
+  border-color: #cbd5e3;
+}
+
+.task-option input {
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  accent-color: #172b4d;
+}
+
+/* Messages */
+
+.message {
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+.message.success {
+  color: #16835c;
+}
+
+.message.error {
+  color: #c43d48;
+}
+
+/* Activity history */
+
+.activity-history {
+  display: grid;
+  gap: 12px;
+}
+
+.activity-item {
+  border: 1px solid #e7ebf1;
+  border-radius: 11px;
+  padding: 17px;
+}
+
+.activity-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.activity-name {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.activity-meta {
+  font-size: 12px;
+  color: #8490a3;
+  margin-top: 5px;
+}
+
+.category-tag {
+  padding: 5px 9px;
+  border-radius: 20px;
+  background: #eef2f8;
+  color: #344a6b;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.activity-tasks {
+  color: #58677d;
+  font-size: 13px;
+  line-height: 1.7;
+  margin-top: 12px;
+}
+
+.activity-notes {
+  color: #8490a3;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.history-heading select {
+  width: auto;
+  min-width: 140px;
+}
+
+/* Footer */
+
+footer {
+  text-align: center;
+  padding: 35px 0 10px;
+  font-size: 12px;
+  color: #99a2b0;
+}
+
+.footer-hadith {
+  color: #8490a3;
+  font-size: 11px;
+  margin-top: 6px;
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+  .app-container {
+    width: 94%;
+    padding-top: 18px;
+  }
+
+  .login-card {
+    padding: 28px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid,
+  .task-options {
+    grid-template-columns: 1fr;
+  }
+
+  .content-card {
+    padding: 19px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .history-heading select {
+    width: 100%;
+  }
+
+  .hadith-card {
+    padding: 23px;
+  }
+}
