@@ -11,6 +11,10 @@ const crypto = require("crypto");
 
 const app = express();
 
+// Render runs behind a reverse proxy. Trust it so secure session cookies
+// are correctly set and returned over HTTPS.
+app.set("trust proxy", 1);
+
 // =====================================
 // CONFIGURATION
 // =====================================
